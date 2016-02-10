@@ -9,6 +9,8 @@ RUN apk add --update ca-certificates wget curl && \
     unzip /nomad_${NOMAD_VERSION}_linux_amd64.zip && \
     curl -o /usr/local/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 && \
     chmod +x /usr/local/bin/docker && \
+    wget -O /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.6.0/docker-compose-Linux-x86_64 && \
+    chmod +x /usr/local/bin/docker-compose && \
     apk del ca-certificates wget && \
     rm -rfv /nomad* /var/cache/apk/*
 
