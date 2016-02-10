@@ -11,6 +11,7 @@ RUN apk add --update ca-certificates wget curl && \
     chmod +x /usr/local/bin/docker && \
     wget -O /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.6.0/docker-compose-Linux-x86_64 && \
     chmod +x /usr/local/bin/docker-compose && \
+    apk add git && \
     apk del ca-certificates wget && \
     rm -rfv /nomad* /var/cache/apk/*
 
