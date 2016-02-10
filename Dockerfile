@@ -10,6 +10,7 @@ RUN apk add --update ca-certificates wget && \
     apk del ca-certificates wget && \
     rm -rfv /nomad* /var/cache/apk/*
 
+ADD nomad.config /etc/nomad.config
 ENTRYPOINT ["/usr/local/bin/nomad"]
 
 # sha256sum -c /nomad.sha256 && \
