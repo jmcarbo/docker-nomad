@@ -7,6 +7,8 @@ RUN apk add --update ca-certificates wget curl && \
     echo "${NOMAD_SHA256}  nomad_${NOMAD_VERSION}_linux_amd64.zip" > /nomad.sha256 && \
     cd /usr/local/bin && \
     unzip /nomad_${NOMAD_VERSION}_linux_amd64.zip && \
+    curl -o /usr/local/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 && \
+    chmod +x /usr/local/bin/docker && \
     apk del ca-certificates wget && \
     rm -rfv /nomad* /var/cache/apk/*
 
