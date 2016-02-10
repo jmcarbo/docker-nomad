@@ -16,6 +16,8 @@ RUN apk add --update ca-certificates wget curl && \
     rm -rfv /nomad* /var/cache/apk/*
 
 ADD nomad.config /etc/nomad.config
+ADD server.config /etc/server.config
 ENTRYPOINT ["/usr/local/bin/nomad"]
+VOLUME [ "/data" ]
 
 # sha256sum -c /nomad.sha256 && \
